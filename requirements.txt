@@ -14,3 +14,4 @@ pydantic
 python-multipart
 torch
 gunicorn
+groq
