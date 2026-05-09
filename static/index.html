@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHL Assessment Recommender | AI Dashboard</title>
+    <link rel="icon" type="image/png" href="/static/shl-logo-500x500-v2.png">
+    <link rel="stylesheet" href="/static/style.css?v=3">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar for Multiple Chats -->
+        <aside class="chat-sidebar">
+            <div class="sidebar-header">
+                <button id="btn-new-chat" class="new-chat-btn"><i class="fas fa-plus"></i> New Chat</button>
+            </div>
+            <ul id="chat-list" class="chat-list">
+                <!-- Chat items injected via JS -->
+            </ul>
+        </aside>
+
+        <!-- Main Interface -->
+        <div class="app-container">
+            <!-- Header with Turn Limit Bar -->
+            <header>
+                <div class="logo">
+                    <span class="shl-blue">SHL</span> <span class="labs">Labs</span>
+                </div>
+                <div class="turn-limit-container">
+                    <div class="turn-label">Turn Limit: <span id="turn-count">0</span>/8</div>
+                    <div class="progress-bar-bg">
+                        <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="status-indicator">
+                    <div class="dot active"></div>
+                    Agent Online
+                </div>
+            </header>
+
+            <main>
+                <!-- Chat Interface -->
+            <div id="chat-window" class="chat-window">
+                <div class="message system">
+                    <div class="avatar"></div>
+                    <div class="text">Hello! I'm your SHL Assessment Recommender. How can I help you find the right talent solutions today?</div>
+                </div>
+            </div>
+
+            <!-- Recommendation Panel (Side/Overlay) -->
+            <div id="recommendation-panel" class="recommendation-panel hidden">
+                <h3>Recommended Assessments</h3>
+                <div id="rec-list" class="rec-list"></div>
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <footer>
+            <div class="input-group">
+                <textarea id="user-input" placeholder="Ask about assessments, e.g., 'What test should I use for a Java Developer?'" rows="1"></textarea>
+                <button id="btn-send" title="Send Message" aria-label="Send Message"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

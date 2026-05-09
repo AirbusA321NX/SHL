@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+mistralai
+openai
+google-generativeai
+sentence-transformers
+faiss-cpu
+numpy<2.0.0
+python-dotenv
+easyocr
+openai-whisper
+httpx
+pydantic
+python-multipart
+torch
