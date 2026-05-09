@@ -1,4 +1,5 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
+print("!!! SHL APP BOOTING - VERSION 1.1 - DEBUG MODE ON !!!")
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import List, Optional
