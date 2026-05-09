@@ -25,6 +25,11 @@ if not os.path.exists("static"):
     os.makedirs("static")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+from fastapi.responses import RedirectResponse
+@app.get("/")
+async def root():
+    return RedirectResponse(url="/static/index.html")
+
 # Singleton agent
 agent = SHLAgent()
 
