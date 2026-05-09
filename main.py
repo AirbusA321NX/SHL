@@ -1,5 +1,5 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
-print("!!! SHL APP BOOTING - VERSION 1.1 - DEBUG MODE ON !!!")
+print("!!! SHL APP BOOTING - VERSION 1.2 [FINAL_FIX] - DEBUG MODE ON !!!")
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import List, Optional
@@ -7,7 +7,7 @@ import os
 from dotenv import load_dotenv
 
 # Import our custom modules
-from app.agent import SHLAgent
+from app.shl_recommender import SHLAgent
 import asyncio
 
 load_dotenv(override=True)

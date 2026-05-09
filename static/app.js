@@ -242,7 +242,7 @@ function appendMessage(role, text, isRaw = false) {
     msgDiv.id = `msg-${id}`;
     
     const avatar = role === 'system' ? 'AGENT' : 'USER';
-    const content = (role === 'system' && !isRaw) ? marked.parse(text) : text;
+    const content = (role === 'system' && !isRaw) ? marked.parse(text || "") : (text || "");
     
     msgDiv.innerHTML = `
         <div class="avatar">${avatar}</div>
