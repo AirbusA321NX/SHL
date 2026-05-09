@@ -1,8 +1,4 @@
-try:
-    from groq import AsyncGroq
-except ImportError:
-    AsyncGroq = None
-
+from groq import AsyncGroq
 import os
 import time
 from typing import List, Dict
@@ -17,10 +13,8 @@ class SHLAgent:
     def __init__(self):
         self.api_key = os.getenv("GROQ_API_KEY")
         self.model = "llama-3.3-70b-versatile"
-        if AsyncGroq:
-            self.client = AsyncGroq(api_key=self.api_key)
-        else:
-            self.client = None
+        print(f"DEBUG: Initializing SHLAgent with API Key: {'Set' if self.api_key else 'Missing'}")
+        self.client = AsyncGroq(api_key=self.api_key)
         self.vector_store = get_vector_store()
 
     async def _call_llm(self, messages, response_format=None):
