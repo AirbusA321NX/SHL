@@ -31,6 +31,10 @@ from fastapi.responses import RedirectResponse
 async def root():
     return RedirectResponse(url="/static/index.html")
 
+@app.get("/health")
+async def health():
+    return {"status": "healthy", "service": "SHL Assessment Recommender"}
+
 # Singleton agent
 agent = SHLAgent()
 
